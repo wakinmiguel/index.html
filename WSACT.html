@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+		* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+			color: white;
+        }
+		body {
+            padding: 20px;
+			background-color: #18392B;
+        }
+		header {
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transform: rotateX(0deg);
+		}
+		header h1 {
+            font-size: 2.2em;
+			font-style: italic;
+        }
+		nav {
+            background-color: #C29200;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+		nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 12px;
+            transition: transform 0.3s;
+        }
+		.container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+		.cafe {
+            margin-bottom: 60px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .cafe:hover {
+            transform: scale(1.03) rotateY(2deg);
+        }
+        .cafe img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .form-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-top: 50px;
+            border-radius: 8px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 500px;
+            margin: auto;
+        }
+        input, textarea {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            .cafe img {
+                width: 90%;
+            }
+        }
+</style>
+</head>
+<body>
+	<header>
+        <h1>Cafes to Visit in Makati</h1>
+        <p>Domain: <strong>www.makaticoffeehub.free</strong></p>
+    </header>
+
+    <nav>
+        <a href="#odd">ODD Cafe</a>
+        <a href="#habitual">Habitual Coffee</a>
+        <a href="#panco">Panco Cafe</a>
+        <a href="#baker">Baker on East</a>
+        <a href="#pao">Pao Cafe</a>
+        <a href="#form">Feedback</a>
+    </nav>
+		<div class="container">
+        <p style="text-align:center; margin: 20px 0;">A Blog by <strong>Joaquin Alfonso</strong></p>
+
+        <div class="cafe" id="odd">
+            <h2>1. ODD CAFE, Salcedo Makati</h2><br>
+            <img src="https://cdn.phonebooky.com/blog/wp-content/uploads/2022/06/23104830/odd1_11zon.jpg" alt="ODD Cafe">
+        </div>
+
+        <div class="cafe" id="habitual">
+            <h2>2. HABITUAL COFFEE, Salcedo Makati</h2><br>
+            <img src="https://hillsandvalleys.ph/wp-content/uploads/2023/09/habitual-coffee-1024x768.webp" alt="Habitual Coffee">
+        </div>
+
+        <div class="cafe" id="panco">
+            <h2>3. PANCO CAFE, Legazpi Makati</h2><br>
+            <img src="https://images.squarespace-cdn.com/content/v1/5d7f2d797a64971f017f10ff/f6eb33df-8eb8-4020-a27c-bc95c41c07b3/07-06+PANCO+CAFE+P1.png" alt="Panco Cafe">
+        </div>
+
+        <div class="cafe" id="baker">
+            <h2>4. BAKER ON EAST, Salcedo Makati</h2><br>
+            <img src="https://images.squarespace-cdn.com/content/v1/5d7f2d797a64971f017f10ff/69eb3503-281e-4ac1-803b-4b2033afaf8f/05-08+BAKER+ON+EAST+P1.png" alt="Baker on East">
+        </div>
+
+        <div class="cafe" id="pao">
+            <h2>5. PAO CAFE, Yakal Makati</h2><br>
+            <img src="https://primer.com.ph/food/wp-content/uploads/sites/4/2024/01/Pao-Cafe-120724-7-900x506.jpg" alt="Pao Cafe">
+        </div>
+
+        <div class="form-section" id="form">
+            <h2 style="text-align:center;">💬 Leave Your Feedback</h2><br>
+            <form action="#" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Share your cafe experience!" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <footer>
+            <br><br>
+            <a href="https://youtu.be/cdCXb_pYa7c?si=1X_K3ojGphxY1nup" target="_blank">🎥 Watch this video on YouTube</a>
+            <p style="margin-top: 20px;">&copy; 2025 www.makaticoffeehub.free</p>
+        </footer>
+    </div>
+
+</body>
+</html>
