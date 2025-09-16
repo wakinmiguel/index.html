@@ -7,7 +7,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Courier New', Courier, monospace;
-			color: white;
+			color: black;
         }
 		body {
             padding: 20px;
@@ -22,15 +22,19 @@
 		header h1 {
             font-size: 2.2em;
 			font-style: italic;
+			color:white;
+        }
+        h2{
+        	color:white;
         }
 		nav {
-            background-color: #C29200;
+            background-color: #C29200; /*yellow*/
             display: flex;
             justify-content: center;
             padding: 10px 0;
         }
 		nav a {
-            color: #fff;
+            color: white;
             text-decoration: none;
             margin: 0 15px;
             padding: 8px 12px;
@@ -89,6 +93,20 @@
         button:hover {
             background-color: #555;
         }
+        input[type="submit"]{
+        	color: blue;
+        	padding: 10px 20px;
+        	border: blue solid 1px;
+        	border-radius: 20px;
+        	cursor: pointer;
+        	width: 200px;
+        	margin-left: calc(35% - 35px - 8px);
+			}
+		.java{
+        	max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            }
         /* Responsive Design */
         @media (max-width: 768px) {
             nav {
@@ -103,7 +121,7 @@
 <body>
 	<header>
         <h1>Cafes to Visit in Makati</h1>
-        <p>Domain: <strong>www.makaticoffeehub.free</strong></p>
+        <p style="color:white">Domain: <strong style="color:white">www.makaticoffeehub.free</strong></p>
     </header>
 
     <nav>
@@ -115,49 +133,129 @@
         <a href="#form">Feedback</a>
     </nav>
 		<div class="container">
-        <p style="text-align:center; margin: 20px 0;">A Blog by <strong>Joaquin Alfonso</strong></p>
+        <p style="text-align:center; margin: 20px 0; color:white;">A Blog by <strong style="color:white">Joaquin Alfonso</strong></p>
 
         <div class="cafe" id="odd">
             <h2>1. ODD CAFE, Salcedo Makati</h2><br>
-            <img src="https://cdn.phonebooky.com/blog/wp-content/uploads/2022/06/23104830/odd1_11zon.jpg" alt="ODD Cafe">
+            <img id="img1" src="https://cdn.phonebooky.com/blog/wp-content/uploads/2022/06/23104830/odd1_11zon.jpg" alt="ODD Cafe">
+            <br><button id="changeButton" style="background: #C29200">Click to change photo</button>
         </div>
 
         <div class="cafe" id="habitual">
             <h2>2. HABITUAL COFFEE, Salcedo Makati</h2><br>
-            <img src="https://hillsandvalleys.ph/wp-content/uploads/2023/09/habitual-coffee-1024x768.webp" alt="Habitual Coffee">
+            <img id="img2" src="https://hillsandvalleys.ph/wp-content/uploads/2023/09/habitual-coffee-1024x768.webp" alt="Habitual Coffee">
+            <br><button id="changeButton2" style="background: #C29200">Click to change photo</button>
         </div>
 
         <div class="cafe" id="panco">
             <h2>3. PANCO CAFE, Legazpi Makati</h2><br>
-            <img src="https://images.squarespace-cdn.com/content/v1/5d7f2d797a64971f017f10ff/f6eb33df-8eb8-4020-a27c-bc95c41c07b3/07-06+PANCO+CAFE+P1.png" alt="Panco Cafe">
+            <img id="img3" src="https://images.squarespace-cdn.com/content/v1/5d7f2d797a64971f017f10ff/f6eb33df-8eb8-4020-a27c-bc95c41c07b3/07-06+PANCO+CAFE+P1.png" alt="Panco Cafe">
+            <br><button id="changeButton3" style="background: #C29200">Click to change photo</button>
         </div>
 
         <div class="cafe" id="baker">
             <h2>4. BAKER ON EAST, Salcedo Makati</h2><br>
-            <img src="https://images.squarespace-cdn.com/content/v1/5d7f2d797a64971f017f10ff/69eb3503-281e-4ac1-803b-4b2033afaf8f/05-08+BAKER+ON+EAST+P1.png" alt="Baker on East">
+            <img id="img4" src="https://images.squarespace-cdn.com/content/v1/5d7f2d797a64971f017f10ff/69eb3503-281e-4ac1-803b-4b2033afaf8f/05-08+BAKER+ON+EAST+P1.png" alt="Baker on East">
+            <br><button id="changeButton4" style="background: #C29200">Click to change photo</button>
         </div>
 
         <div class="cafe" id="pao">
             <h2>5. PAO CAFE, Yakal Makati</h2><br>
-            <img src="https://primer.com.ph/food/wp-content/uploads/sites/4/2024/01/Pao-Cafe-120724-7-900x506.jpg" alt="Pao Cafe">
+            <img id="img5" src="https://primer.com.ph/food/wp-content/uploads/sites/4/2024/01/Pao-Cafe-120724-7-900x506.jpg" alt="Pao Cafe">
+            <br><button id="changeButton5" style="background: #C29200">Click to change photo</button>
         </div>
-
+		
+		
+		<br><br><br><br><br><br><br><br><br><br><br>
         <div class="form-section" id="form">
-            <h2 style="text-align:center;">💬 Leave Your Feedback</h2><br>
-            <form action="#" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Share your cafe experience!" required></textarea>
-                <button type="submit">Submit</button>
+            <h2 style="text-align:center; color:black">💬 Leave Your Feedback</h2><br>
+            <form action="thankies.html" name="myForm" onsubmit="return (validate());">
+                First Name<br><input type="text" name="fname" placeholder="Enter first name">
+				Email Address<br><input type="text" name="email" placeholder="Enter email address"/>
+				Password<br><input type="password" name="pass" placeholder="Enter new password"/>
+				Confirm Password<br><input type="password" name="vpass" placeholder="Repeat your password"/>
+				Date of Birth<br><input type="date" name="bday"/>
+				<input type="submit" value="Sign Up">
             </form>
         </div>
-
-        <footer>
+        
+		<footer>
             <br><br>
-            <a href="https://youtu.be/cdCXb_pYa7c?si=1X_K3ojGphxY1nup" target="_blank">🎥 Watch this video on YouTube</a>
-            <p style="margin-top: 20px;">&copy; 2025 www.makaticoffeehub.free</p>
+            <a href="https://youtu.be/cdCXb_pYa7c?si=1X_K3ojGphxY1nup" target="_blank"><p style="color:white">🎥 Watch this video on YouTube</p></a>
+            <p style="margin-top: 20px; color:white;">&copy; 2025 www.makaticoffeehub.free</p>
         </footer>
-    </div>
+
+<script type="text/javascript">
+	const changeButton = document.getElementById('changeButton');
+	const img1 = document.getElementById('img1');
+	
+	const changeButton2 = document.getElementById('changeButton2');
+	const img2 = document.getElementById('img2');
+	
+	const changeButton3 = document.getElementById('changeButton3');
+	const img3 = document.getElementById('img3');
+	
+	const changeButton4 = document.getElementById('changeButton4');
+	const img4 = document.getElementById('img4');
+	
+	const changeButton5 = document.getElementById('changeButton5');
+	const img5 = document.getElementById('img5');
+
+        changeButton.addEventListener('click', () => {
+            img1.src = 'https://images.happycow.net/venues/1024/42/03/hcmp420378_3189269.jpeg';
+            img1.alt = 'A new placeholder image';
+        });
+        changeButton2.addEventListener('click', () => {
+            img2.src = 'https://www.photographerofdreams.com/blog/wp-content/uploads/2023/09/habitual_coffee_manila.png';
+            img2.alt = 'A new placeholder image';
+        });
+        changeButton3.addEventListener('click', () => {
+            img3.src = 'https://cdn.phonebooky.com/blog/wp-content/uploads/2024/05/21161109/panco2.jpg';
+            img3.alt = 'A new placeholder image';
+        });
+        changeButton4.addEventListener('click', () => {
+            img4.src = 'https://images.squarespace-cdn.com/content/v1/5d7f2d797a64971f017f10ff/8b0fc536-a7d1-40d7-ab61-4c6b2814a1a0/05-08+BAKER+ON+EAST+P3.png?format=2500w';
+            img4.alt = 'A new placeholder image';
+        });
+        changeButton5.addEventListener('click', () => {
+            img5.src = 'https://paocafe.ph/_nuxt/slider_2.BAiDpbYN.webp';
+            img5.alt = 'A new placeholder image';
+        });
+
+function validate() {
+    if (document.myForm.fname.value === "") {
+        alert("Please provide your First Name!");
+        document.myForm.fname.focus();
+        return false;
+    }
+    
+    if (document.myForm.email.value === "") {
+        alert("Please provide your Email!");
+        document.myForm.email.focus();
+        return false;
+    }
+
+    if (document.myForm.pass.value === "") {
+        alert("Please provide your Password!");
+        document.myForm.pass.focus();
+        return false;
+    }
+
+    if (document.myForm.vpass.value === "") {
+        alert("Please provide your Confirmation Password!");
+        document.myForm.vpass.focus();
+        return false;
+    }
+
+    if (document.myForm.bday.value === "") {
+        alert("Please provide your Date of Birth!");
+        document.myForm.bday.focus();
+        return false;
+    }
+
+    return true;
+}
+</script>
 
 </body>
 </html>
