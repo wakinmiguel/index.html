@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+		* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+			color: black;
+        }
+		body {
+            padding: 20px;
+			background-color: #18392B;
+        }
+		header {
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transform: rotateX(0deg);
+		}
+		header h1 {
+            font-size: 2.2em;
+			font-style: italic;
+			color:white;
+        }
+        h2{
+        	color:white;
+        }
+		nav {
+            background-color: #C29200; /*yellow*/
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+		nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 12px;
+            transition: transform 0.3s;
+        }
+		.container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+		.cafe {
+            margin-bottom: 60px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .cafe:hover {
+            transform: scale(1.03) rotateY(2deg);
+        }
+        .cafe img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .form-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-top: 50px;
+            border-radius: 8px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 500px;
+            margin: auto;
+        }
+        input, textarea {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        input[type="submit"]{
+        	color: blue;
+        	padding: 10px 20px;
+        	border: blue solid 1px;
+        	border-radius: 20px;
+        	cursor: pointer;
+        	width: 200px;
+        	margin-left: calc(35% - 35px - 8px);
+			}
+		.java{
+        	max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            .cafe img {
+                width: 90%;
+            }
+        }
+		.cafe-card {
+        margin-bottom: 30px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        background-color: #f9f9f9;
+    }
+    .cafe-card img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+    .cafe-card button {
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        margin-top: 10px;
+    }
+    .cafe-card button:hover {
+        background-color: #555;
+    }
+</style>
+</head>
+<body>
+	<header>
+        <h1>Cafes to Visit in Makati</h1>
+    </header>
+
+    <nav>
+        <a href="#odd">ODD Cafe</a>
+        <a href="#habitual">Habitual Coffee</a>
+        <a href="#panco">Panco Cafe</a>
+        <a href="#baker">Baker on East</a>
+        <a href="#pao">Pao Cafe</a>
+        <a href="#form">Feedback</a>
+    </nav>
+	
+	<div class="container">
+    <h2 style="text-align: center; color:white;">Explore</h2>
+	<br><br>
+    <div id="cafes-list"></div>
+	</div>
+		<div class="container">
+        
+		<br><br><br><br><br><br><br><br><br><br><br>
+        <div class="form-section" id="form">
+            <h2 style="text-align:center; color:black">💬 Leave Your Feedback</h2><br>
+            <form action="thankies.html" name="myForm" onsubmit="return (validate());">
+                First Name<br><input type="text" name="fname" placeholder="Enter first name">
+				Email Address<br><input type="text" name="email" placeholder="Enter email address"/>
+				Password<br><input type="password" name="pass" placeholder="Enter new password"/>
+				Confirm Password<br><input type="password" name="vpass" placeholder="Repeat your password"/>
+				Date of Birth<br><input type="date" name="bday"/>
+				<input type="submit" value="Sign Up">
+            </form>
+        </div>
+        
+		<footer>
+            <br><br>
+            <a href="https://youtu.be/cdCXb_pYa7c?si=1X_K3ojGphxY1nup" target="_blank"><p style="color:white">🎥 Watch this video on YouTube</p></a>
+            <p style="margin-top: 20px; color:white;">&copy; 2025 www.makaticoffeehub.free</p>
+        </footer>
+
+<script type="text/javascript">
+	const cafes = [
+        {
+            name: "ODD Cafe",
+            description: "A cozy, quiet cafe offering specialty coffee and a great atmosphere for working or reading.",
+            imgUrl: "https://cdn.phonebooky.com/blog/wp-content/uploads/2022/06/23104830/odd1_11zon.jpg",
+        },
+        {
+            name: "Habitual Coffee",
+            description: "Known for its excellent brewed coffee and relaxing vibes. Perfect for coffee lovers.",
+            imgUrl: "https://hillsandvalleys.ph/wp-content/uploads/2023/09/habitual-coffee-1024x768.webp",
+        },
+        {
+            name: "Panco Cafe",
+            description: "A hidden gem serving freshly baked pastries and delicious coffee in a minimalist setting.",
+            imgUrl: "https://images.squarespace-cdn.com/content/v1/5d7f2d797a64971f017f10ff/f6eb33df-8eb8-4020-a27c-bc95c41c07b3/07-06+PANCO+CAFE+P1.png",
+        },
+        {
+            name: "Baker on East",
+            description: "A delightful bakery offering mouth-watering bread, pastries, and gourmet coffee.",
+            imgUrl: "https://images.squarespace-cdn.com/content/v1/5d7f2d797a64971f017f10ff/69eb3503-281e-4ac1-803b-4b2033afaf8f/05-08+BAKER+ON+EAST+P1.png",
+        },
+        {
+            name: "Pao Cafe",
+            description: "A small, chic cafe specializing in premium coffee and artisanal sandwiches.",
+            imgUrl: "https://primer.com.ph/food/wp-content/uploads/sites/4/2024/01/Pao-Cafe-120724-7-900x506.jpg",
+        }
+    ];
+	
+    function displayCafes() {
+        const cafesList = document.getElementById('cafes-list');
+
+        cafes.forEach((cafe, index) => {
+            const cafeCard = document.createElement('div');
+            cafeCard.classList.add('cafe-card');
+            cafeCard.style.marginBottom = "30px";
+            cafeCard.style.border = "1px solid #ddd";
+            cafeCard.style.borderRadius = "8px";
+            cafeCard.style.padding = "20px";
+            cafeCard.style.textAlign = "center";
+            cafeCard.style.backgroundColor = "#f9f9f9";
+
+            const cafeName = document.createElement('h3');
+            cafeName.innerText = cafe.name;
+
+            const cafeImg = document.createElement('img');
+            cafeImg.src = cafe.imgUrl;
+            cafeImg.alt = cafe.name + " image";
+            cafeImg.style.width = "100%";
+            cafeImg.style.maxWidth = "500px";
+            cafeImg.style.borderRadius = "8px";
+            cafeImg.style.marginBottom = "15px";
+
+            const cafeDescription = document.createElement('p');
+            cafeDescription.innerText = cafe.description;
+            cafeDescription.style.display = "none";
+
+            const toggleButton = document.createElement('button');
+            toggleButton.innerText = "Show More Info";
+            toggleButton.style.backgroundColor = "#333";
+            toggleButton.style.color = "white";
+            toggleButton.style.padding = "10px 20px";
+            toggleButton.style.cursor = "pointer";
+            toggleButton.style.border = "none";
+            toggleButton.style.marginTop = "10px";
+			toggleButton.style.Align = "center";
+
+            toggleButton.addEventListener('click', () => {
+                if (cafeDescription.style.display === "none") {
+                    cafeDescription.style.display = "block";
+                    toggleButton.innerText = "Show Less Info";
+                } else {
+                    cafeDescription.style.display = "none";
+                    toggleButton.innerText = "Show More Info";
+                }
+            });
+
+            cafeCard.appendChild(cafeName);
+            cafeCard.appendChild(cafeImg);
+            cafeCard.appendChild(cafeDescription);
+            cafeCard.appendChild(toggleButton);
+
+            cafesList.appendChild(cafeCard);
+        });
+    }
+
+    window.onload = displayCafes;
+
+	const changeButton = document.getElementById('changeButton');
+	const img1 = document.getElementById('img1');
+	
+	const changeButton2 = document.getElementById('changeButton2');
+	const img2 = document.getElementById('img2');
+	
+	const changeButton3 = document.getElementById('changeButton3');
+	const img3 = document.getElementById('img3');
+	
+	const changeButton4 = document.getElementById('changeButton4');
+	const img4 = document.getElementById('img4');
+	
+	const changeButton5 = document.getElementById('changeButton5');
+	const img5 = document.getElementById('img5');
+
+        changeButton.addEventListener('click', () => {
+            img1.src = 'https://images.happycow.net/venues/1024/42/03/hcmp420378_3189269.jpeg';
+            img1.alt = 'A new placeholder image';
+        });
+        changeButton2.addEventListener('click', () => {
+            img2.src = 'https://www.photographerofdreams.com/blog/wp-content/uploads/2023/09/habitual_coffee_manila.png';
+            img2.alt = 'A new placeholder image';
+        });
+        changeButton3.addEventListener('click', () => {
+            img3.src = 'https://cdn.phonebooky.com/blog/wp-content/uploads/2024/05/21161109/panco2.jpg';
+            img3.alt = 'A new placeholder image';
+        });
+        changeButton4.addEventListener('click', () => {
+            img4.src = 'https://images.squarespace-cdn.com/content/v1/5d7f2d797a64971f017f10ff/8b0fc536-a7d1-40d7-ab61-4c6b2814a1a0/05-08+BAKER+ON+EAST+P3.png?format=2500w';
+            img4.alt = 'A new placeholder image';
+        });
+        changeButton5.addEventListener('click', () => {
+            img5.src = 'https://paocafe.ph/_nuxt/slider_2.BAiDpbYN.webp';
+            img5.alt = 'A new placeholder image';
+        });
+
+function validate() {
+    if (document.myForm.fname.value === "") {
+        alert("Please provide your First Name!");
+        document.myForm.fname.focus();
+        return false;
+    }
+    
+    if (document.myForm.email.value === "") {
+        alert("Please provide your Email!");
+        document.myForm.email.focus();
+        return false;
+    }
+
+    if (document.myForm.pass.value === "") {
+        alert("Please provide your Password!");
+        document.myForm.pass.focus();
+        return false;
+    }
+
+    if (document.myForm.vpass.value === "") {
+        alert("Please provide your Confirmation Password!");
+        document.myForm.vpass.focus();
+        return false;
+    }
+
+    if (document.myForm.bday.value === "") {
+        alert("Please provide your Date of Birth!");
+        document.myForm.bday.focus();
+        return false;
+    }
+
+    return true;
+}
+</script>
+
+</body>
+</html>
+
